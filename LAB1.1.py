@@ -25,3 +25,4 @@ def binary_search(ls, search):
 
 
 binary_search(a, n)
+
