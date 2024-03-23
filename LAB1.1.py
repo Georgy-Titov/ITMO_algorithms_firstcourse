@@ -1,10 +1,11 @@
 a = [5, 9, 13, 23, 27, 51, 61, 77, 84, 96]
 n = int(input())
+a.sort()
 
 
 def binary_search(ls, search):
     left = 0
-    right = len(a) - 1
+    right = len(ls) - 1
     mid = (left + right) // 2
 
     steps = 0
@@ -24,4 +25,4 @@ def binary_search(ls, search):
         print("Number was not found!\n")
 
 
-binary_search(sorted(a), n)
+binary_search(a, n)
