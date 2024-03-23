@@ -19,10 +19,9 @@ def binary_search(ls, search):
         mid = (left + right) // 2
 
     if search == ls[mid]:
-        print(f"ID: {mid} Search: {search} Steps: {steps}\n")
+        print(f"Index: {mid} Search: {search} Steps: {steps}\n")
     else:
         print("Number was not found!\n")
 
 
-binary_search(a, n)
-
+binary_search(sorted(a), n)
