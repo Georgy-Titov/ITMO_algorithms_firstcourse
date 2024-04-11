@@ -1,10 +1,13 @@
-def naive(s, pat):
-    m = len(pat)
+def Rabin_Carp(text, sub_text):
     c = 0
-    for i in range(len(s) - m):
-        if s[i:i + m] == pat:
-            for j in pat:
-                c += len(j)
+    sub_text_hash = hash(sub_text)
+    sub_text_len = len(sub_text)
+    for i in range(len(text) - sub_text_len + 1):
+        if hash(text[i: i + sub_text_len]) == sub_text_hash:
+            if text[i: i + sub_text_len] == sub_text:
+                c += 1
+                print(sub_text)
+
     return c
 
 
@@ -13,8 +16,8 @@ wiki = open('wiki.txt', encoding='utf-8').read().split()
 plag, total = 0, 0
 
 for i in range(len(ref) - 3):
-    pat = ref[i:i + 3]
-    plag += naive(wiki, pat)
+    pat = " ".join(ref[i:i + 3])
+    plag += Rabin_Carp(" ".join(wiki), pat)
 
 for i in ref:
     total += len(i)
