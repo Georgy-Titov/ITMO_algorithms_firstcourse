@@ -61,11 +61,12 @@ def bmh(text, substring):
         return None
     c = 0
     i = len(substring) - 1
+    n = i
     start_index = ord(" ")
     end_index = ord("~")
     alphabet = preprocess(substring, start_index, end_index)
     while i < len(text):
-        if text[i - len(substring): i + 1] == substring:
+        if text[i - n: i + 1] == substring:
             c += 1
         i = i + alphabet[ord(text[i]) - start_index]
 
@@ -103,4 +104,7 @@ def kmp(haystack, needle):
     return k
 
 
+print(naive_search(s, template))
+print(Rabin_Carp(s, template))
+print(bmh(s, template))
 print(kmp(s, template))
