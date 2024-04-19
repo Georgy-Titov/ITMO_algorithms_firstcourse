@@ -39,6 +39,6 @@ def heap_sort(s):
         sift_down(s, 0, end)
 
 
-ls = [6, 7, 4, 4, 12, 91, 51, 23, 21]
+ls = [5, 0, -2, 7, 3]
 heap_sort(ls)
 print(ls)

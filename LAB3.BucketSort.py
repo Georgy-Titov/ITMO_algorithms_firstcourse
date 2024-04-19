@@ -10,7 +10,6 @@ def quick_sort(s):
     return quick_sort(left) + center + quick_sort(right)
 
 
-
 def find_min_max(sequence):
     if len(sequence) == 0:
         return [0, 0]
